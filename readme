@@ -1,0 +1,43 @@
+npx tsc --init //init tsconfig.json
+{
+"compilerOptions": {
+"target": "ES6",
+"module": "CommonJS",
+"outDir": "./dist",
+"rootDir": "./src",
+"strict": true,
+"esModuleInterop": true,
+"skipLibCheck": true
+},
+"include": ["src/**/*.ts"],
+"exclude": ["node_modules"]
+}
+
+npm i --save-dev typescript
+npm i --save-dev ts-node
+npm i --save-dev @types/node
+npm install typescript @types/node @types/express --save-dev
+1.configure tsconfig.json
+
+- You will see many more options available than what is above. Your application may require additional settings to be configured, but these are typically the main settings to start with.
+
+target - sets what version of JS TypeScript will be transpiled to.
+module - sets what module system will be used when transpiling. Node.js uses the common.js module system by default
+lib - is used to say what libraries your code is using. In this case, ES2018 and the DOM API
+outDir - where you want your src code to output to. Often named build, prod, or server (when using it serverside)
+strict - enable strict typing
+noImplicitAny - disallow the "any" type (covered in TypeScript Basics)
+exclude - directories to exclude in compiling
+
+npm install eslint prettier eslint-config-prettier eslint-plugin-prettier @typescript-eslint/eslint-plugin @typescript-eslint/parser tsc-alias tsconfig-paths rimraf --save-dev
+eslint: Main Linter (error checker).
+prettier: Main code formatter
+eslint-config-prettier: Configure ESLint so that it does not conflict with Prettier
+eslint-plugin-prettier: Use some additional prettier rules for eslint
+@typescript-eslint/eslint-plugin: ESLint plugin provides rules for Typescript
+@typescript-eslint/parser: Parser allows ESLint to check for Typescript errors
+ts-node: Used to run TypeScript code directly without building
+tsc-alias: Handle alias when building
+tsconfig-paths: When setting import alias in a project using ts-node, we need to use tsconfig-paths so that it understands the paths and baseUrl in the tsconfig.json file
+rimraf: Used to delete the dist folder before building
+nodemon: Used to automatically restart the server when there is a change in the code
