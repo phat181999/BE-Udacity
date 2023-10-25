@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "npx tsc",
     "start": "node build/server.js",
-    "dev": "concurrently \"npx tsc --watch\" \"nodemon -q build/server.js\"",
+    "dev": "ts-node-dev src/server.ts",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "prettier": "prettier --check .",
@@ -33,6 +33,9 @@
     "typescript": "^5.2.2"
   },
   "dependencies": {
+    "@babel/cli": "^7.23.0",
+    "@babel/core": "^7.23.2",
+    "@babel/preset-typescript": "^7.23.2",
     "@types/body-parser": "^1.19.4",
     "@types/cors": "^2.8.15",
     "@types/lodash": "^4.14.200",

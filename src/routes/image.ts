@@ -1,8 +1,7 @@
-import express from 'express'
-import { ImageController } from '~/controllers/images.controller'
+import express from "express";
+import { ImageController } from "../controllers/images.controller";
 
-const imageRouter = express.Router()
-const imageController = new ImageController(ImageService)
-imageRouter.get('/api/images', imageController.imageController)
+const imageRouter = express.Router();
+imageRouter.get("/images", ImageController);
 
-export default imageRouter
+export default imageRouter;
