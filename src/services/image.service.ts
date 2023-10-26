@@ -1,11 +1,22 @@
-import ImageMiddleware from "../middlewares/image";
+import sharp from "sharp";
 
-const imageMiddleware = new ImageMiddleware();
 class ImageService {
-  async resizeImageUrl(urlImage: string) {
-    if (await imageMiddleware.checkImage(urlImage)) {
-      await console.log("urlImage");
-    }
+  async resizeImage(width: number, height: number) {
+    const image = await sharp({
+      create: {
+        width: width,
+        height: height,
+        channels: 3,
+        background: { r: 255, g: 255, b: 255, alpha: 1 },
+      },
+    });
+    return image
+      .jpeg()
+      .png()
+      .toBuffer()
+      .then((data) => {
+        return data;
+      });
   }
 }
 
