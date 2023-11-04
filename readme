@@ -22,3 +22,6 @@ npm install typescript @types/node @types/express --save-dev
 npm install -g ts-node-dev //commnand run
 
 npm i @types/sharp //
+
+Endpoint url test status 200:
+http://localhost:7000/api/images/500/500/?url=https://upload.wikimedia.org/wikipedia/vi/a/a7/Nodejs_logo_light.png

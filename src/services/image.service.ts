@@ -1,4 +1,4 @@
-import sharp from "sharp";
+import sharp from 'sharp'
 
 class ImageService {
   async resizeImage(width: number, height: number) {
@@ -9,15 +9,15 @@ class ImageService {
         channels: 3,
         background: { r: 255, g: 255, b: 255, alpha: 1 },
       },
-    });
+    })
     return image
       .jpeg()
       .png()
       .toBuffer()
-      .then((data) => {
-        return data;
-      });
+      .then(data => {
+        return data
+      })
   }
 }
 
-export default ImageService;
+export default ImageService
