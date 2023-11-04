@@ -25,13 +25,8 @@ class ImageMiddleware {
 
   async checkEndpoint(url: string): Promise<boolean> {
     try {
-      const urlParts = url.slice(url.indexOf('url'))
-
-      if (urlParts) {
-        return true
-      } else {
-        return false
-      }
+      const index = url.indexOf('url')
+      return index > -1
     } catch (error) {
       console.error('Error:', error)
       return false
